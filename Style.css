@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: "Urbansit", sans-serif;
+    font-family: "Urbanist", sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -11,11 +12,11 @@ html {
 
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    padding: 2rem; /* instead of margin-top */
     background-color: #1b1b1b;
 }
 
@@ -25,67 +26,69 @@ li {
     margin: 2rem 0;
     text-transform: capitalize;
     font-weight: 500;
-    &:hover {
-        color: #feac5e;
-    }
+}
+
+li:hover {
+    color: #feac5e;
 }
 
 .main_todo_div {
-    width: 36rem;
+    width: 100%;
+    max-width: 36rem; /* allow shrinking on small screens */
     display: grid;
-    grid-template-columns: 1fr 0.3fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    height: auto;
+    gap: 1rem;
 }
 
 button {
     height: 5rem;
+    font-size: 1.6rem;
 }
 
-h1{
-    font-size: 3.6rem;
-    margin-top: 4.8rem;
+h1 {
+    font-size: 2.8rem;
+    margin: 2rem 0;
+    text-align: center;
 }
 
 hr {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 36rem;
 }
 
 p,
 li,
 button {
-    font-size: 1.7rem;
-    letter-spacing: 0.1rem;
-    font-family:"Urbanist" , sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
     line-height: 1.6;
 }
 
 button {
     background-color: #f5ee62;
-    padding: 0.6rem 2.4rem;
+    padding: 0.6rem 1.6rem;
     border-radius: 10rem;
-    margin-right: 3.6rem;
+    margin: 0;
     cursor: pointer;
-    transform: all 0.3 linear;
+    transition: all 0.3s linear;
+}
 
-    &:hover {
-        box-shadow: inset 0 0 0 0.2rem #f5ee62;
-        background-color: transparent;
-        color: #f5ee62;
-    }
- }
+button:hover {
+    box-shadow: inset 0 0 0 0.2rem #f5ee62;
+    background-color: transparent;
+    color: #f5ee62;
+}
 
- input {
-    padding: 6px 2px;
-    min-width: 32rem;
-    font-size: 18px;
+input {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.6rem;
     border-radius: 0.6rem;
     border: none;
-    margin-right: 1.2rem;
- }
+}
 
- li:hover + .deletBtn {
-    box-shadow: inset 0 0 0 0.2 #f5ee62;
-    background-color:transparent;
-    color:#f5ee62 ;
- }
+.deletBtn {
+    margin-left: 1rem;
+}
