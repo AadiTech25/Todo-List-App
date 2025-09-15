@@ -17,7 +17,7 @@ const addTodoDynamicElement = (curElem) => {
     const divElement = document.createElement("div");
 
     divElement.classList.add("main_todo_div");
-    divElement.innerHTML = `<li>${curElem}</li> <button class="deletBtn">Delet</button>`;
+    divElement.innerHTML = `<li>${curElem}</li> <button class="deletBtn">Delete</button>`;
     mainTodoElem.append(divElement);
 }
 
